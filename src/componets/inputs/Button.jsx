@@ -8,11 +8,15 @@ border: 0;
 font-weight: bolt;
 color: ${props => props.theme.white};
 font-size: 16px;
-cursor: pointer;
 trasition: 0.3s;
+
+${props => !props.disabled && 'cursor: pointer;'}
 
 :hover {
   background-color: ${props => props.theme.primaryHover};
+}
+:disabled {
+  background-color: ${props => props.theme.disabled};
 }
 `
 
