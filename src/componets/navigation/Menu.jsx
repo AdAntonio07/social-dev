@@ -44,6 +44,11 @@ function Menu({ options = [] }) {
     }
   }, [menuRef])
 
+  const hadleClick = (onClick) => {
+    setShow(false)
+    onClick()
+  }
+
   return (
     <StyledContainerMenu>
       <Dots src="/three-dots.svg" height="20px" onClick={() => setShow(!show)} />
@@ -52,7 +57,7 @@ function Menu({ options = [] }) {
           options.map((option, pos) =>
             <StylesOption
               key={`menu-option-${pos}`}
-              onClick={option.onClick}
+              onClick={() => hadleClick(option.onClick)}
             >
               {option.text}
             </StylesOption>

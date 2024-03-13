@@ -15,9 +15,13 @@ export const getPosts = async (limit = 10) => {
     .limit(limit)
 }
 
-export const deletePost = async (id, user) => {
-  return await Post.findOneAndDelete({
-    _id: id,
+export const editPost = async (body, user) => {
+  return Post.findOneAndUpdate({
+    _id: body.id,
     createdBy: user.id
+  }, {
+    text: body.text
+  }, {
+    new: true
   })
 }
