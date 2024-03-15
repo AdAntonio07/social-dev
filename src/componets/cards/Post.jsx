@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useSWRConfig } from 'swr'
 
 import Menu from '../navigation/Menu'
-import EditPost from './editPost'
+import EditPost from './EditPost'
 
 const PostContainer = styled.div`
   background-color: ${props => props.theme.white};
