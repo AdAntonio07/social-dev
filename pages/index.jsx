@@ -9,7 +9,7 @@ import Navbar from '../src/componets/layout/Navbar'
 import Container from '../src/componets/layout/Container'
 import CreatePost from '../src/componets/cards/CreatePost'
 import H3 from '../src/componets/typography/H3'
-import Post from '../src/componets/cards/post'
+import Post from '../src/componets/cards/Post'
 
 const Content = styled.div`
   margin: 50px 0;
