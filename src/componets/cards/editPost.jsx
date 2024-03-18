@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { joiResolver } from '@hookform/resolvers/joi'
 import axios from 'axios'
 
-import ControlledTextarea from '../inputs/ControlledTextarea'
+import ControlledTextarea from '../inputs/controlledTextarea'
 import { createPostSchema } from '../../../modules/post/post.schema'
 import Button from '../inputs/Button'
 
