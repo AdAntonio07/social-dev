@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 import { loginSchema } from '../modules/user/user.schema'
 
-import ImageWithSpace from '../src/componets/layout/ImageWithSpace'
+import ImageWithSpace from '../src/componets/layout/imageWithSpace'
 import H1 from '../src/componets/typography/H1'
 import H2 from '../src/componets/typography/H2'
 import H4 from '../src/componets/typography/H4'
