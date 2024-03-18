@@ -7,12 +7,12 @@ import { useRouter } from 'next/router'
 
 import { signupSchema } from '../modules/user/user.schema'
 
-import ImageWithSpace from '../src/componets/layout/ImageWithSpace'
+import ImageWithSpace from '../src/componets/layout/imageWithSpace'
 import H1 from '../src/componets/typography/H1'
 import H2 from '../src/componets/typography/H2'
 import H4 from '../src/componets/typography/H4'
 import Button from '../src/componets/inputs/Button'
-import Input from '../src/componets/inputs/Input'
+import Input from '../src/componets/inputs/input'
 
 const FormContainer = styled.div`
   margin-top: 60px;
