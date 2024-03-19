@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import { joiResolver } from '@hookform/resolvers/joi'
@@ -45,12 +46,20 @@ function CreatePost({ username }) {
     resolver: joiResolver(createPostSchema),
     mode: 'all'
   })
+  const [loading, setLoading] = useState(false)
 
   const onSubmit = async (data) => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/post`, data)
-    if (response.status === 201) {
-      reset()
-      mutate(`${process.env.NEXT_PUBLIC_API_URL}/api/post`)
+    try {
+      setLoading(true)
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/post`, data)
+      if (response.status === 201) {
+        reset()
+        mutate(`${process.env.NEXT_PUBLIC_API_URL}/api/post`)
+      }
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -69,7 +78,7 @@ function CreatePost({ username }) {
         </TextContainer>
         <ButtonContainer>
           <ButtonText>A sua mensagem será pública</ButtonText>
-          <Button disabled={!isValid}>Postar mensagem</Button>
+          <Button loading={loading} disabled={!isValid}>Postar mensagem</Button>
         </ButtonContainer>
       </form>
     </PostContainer>
